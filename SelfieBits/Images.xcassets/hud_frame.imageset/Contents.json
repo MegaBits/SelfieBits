@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 11,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 395,
+          "top" : 167,
+          "right" : 180,
+          "left" : 44
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "hud_ipad_frame.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

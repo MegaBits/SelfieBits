@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SelfieBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hud_frame" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-63-rlR">
+                                <rect key="frame" x="-4" y="0.0" width="1032" height="768"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.magnificationFilter" value="nearest"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7u1-69-Y6t">
+                                <rect key="frame" x="37" y="648" width="814" height="110"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="g6R-ZL-ozn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vx2-rG-aN7">
+                                    <size key="itemSize" width="75" height="75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="fBa-eH-uX5" customClass="StickerCellView" customModule="SelfieBits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="000.png" translatesAutoresizingMaskIntoConstraints="NO" id="s5A-36-nMX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="s5A-36-nMX" id="lpj-qN-SuG"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gtf-MU-sHx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="F3W-nk-qQV"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X2-sI-6OZ">
+                                <rect key="frame" x="926" y="38" width="62" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="Lok-E1-KcR"/>
+                                    <constraint firstAttribute="height" constant="112" id="QNA-rc-5XU"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                                <state key="normal" backgroundImage="btn_snap_unpressed"/>
+                                <state key="highlighted" backgroundImage="btn_snap_pressed"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imageView.layer.magnificationFilter" value="nearest"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMY-wk-Kg3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgD-pA-nAT">
+                                <rect key="frame" x="926" y="510" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="axs-WZ-3mE"/>
+                                    <constraint firstAttribute="height" constant="62" id="ch2-Sl-Tf4"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_share_unpressed"/>
+                                <state key="highlighted" backgroundImage="btn_share_pressed"/>
+                                <connections>
+                                    <action selector="shareButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qFS-oO-fS5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZX-Q1-II4">
+                                <rect key="frame" x="926" y="396" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="OEq-kv-HhJ"/>
+                                    <constraint firstAttribute="height" constant="62" id="os2-a4-1XM"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_megabits_unpressed"/>
+                                <state key="highlighted" backgroundImage="btn_megabits_pressed"/>
+                                <connections>
+                                    <action selector="megabitsButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ES-No-IU9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEJ-W8-FN1">
+                                <rect key="frame" x="872" y="694" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="hEL-Qj-LLU"/>
+                                    <constraint firstAttribute="height" constant="62" id="hKS-hd-Mzs"/>
+                                    <constraint firstAttribute="width" constant="62" id="olx-4S-eq6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_trash_unpressed"/>
+                                <state key="disabled">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hEL-Qj-LLU"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cameraButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xo3-gV-MM5"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDm-ZW-r4m">
+                                <rect key="frame" x="0.0" y="20" width="896" height="606"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12109375" green="0.12109375" blue="0.12109375" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1X2-sI-6OZ" firstAttribute="top" secondItem="JVz-63-rlR" secondAttribute="top" constant="38" id="54i-dc-aC5"/>
+                            <constraint firstItem="IgD-pA-nAT" firstAttribute="trailing" secondItem="JVz-63-rlR" secondAttribute="trailing" constant="-40" id="DRM-TL-2ZC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7u1-69-Y6t" secondAttribute="trailing" constant="157" id="HHx-HY-80G"/>
+                            <constraint firstItem="jZX-Q1-II4" firstAttribute="bottom" secondItem="JVz-63-rlR" secondAttribute="bottom" constant="-310" id="IlJ-Cw-UGJ"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="trailing" secondItem="cDm-ZW-r4m" secondAttribute="trailing" constant="132" id="Iyb-MK-gyu"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="JXR-qT-Gh1"/>
+                            <constraint firstItem="1X2-sI-6OZ" firstAttribute="trailing" secondItem="JVz-63-rlR" secondAttribute="trailing" constant="-40" id="Lsw-O5-L8F"/>
+                            <constraint firstItem="7u1-69-Y6t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="QJK-kK-8rs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JVz-63-rlR" secondAttribute="bottom" id="TaT-I6-AUg"/>
+                            <constraint firstItem="IgD-pA-nAT" firstAttribute="bottom" secondItem="JVz-63-rlR" secondAttribute="bottom" constant="-196" id="UWI-Yf-y2O"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="W9g-gT-pzz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JVz-63-rlR" secondAttribute="trailing" constant="-20" id="bKY-ST-zdE"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="bottom" secondItem="NEJ-W8-FN1" secondAttribute="bottom" constant="12" id="gTy-0V-yrn"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="leading" secondItem="cDm-ZW-r4m" secondAttribute="leading" constant="-4" id="hAO-g6-436"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="trailing" secondItem="NEJ-W8-FN1" secondAttribute="trailing" constant="94" id="kHw-rQ-57f"/>
+                            <constraint firstItem="jZX-Q1-II4" firstAttribute="trailing" secondItem="JVz-63-rlR" secondAttribute="trailing" constant="-40" id="mMO-fd-rff"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="top" secondItem="cDm-ZW-r4m" secondAttribute="top" constant="-20" id="mUo-gV-DkL"/>
+                            <constraint firstItem="JVz-63-rlR" firstAttribute="bottom" secondItem="cDm-ZW-r4m" secondAttribute="bottom" constant="142" id="sBT-Ku-66W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7u1-69-Y6t" secondAttribute="bottom" constant="10" id="tjB-Ee-Kbk"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="photoView" destination="cDm-ZW-r4m" id="HLA-76-nVD"/>
+                        <outlet property="stickerCollectionView" destination="7u1-69-Y6t" id="qdb-Ih-Pgh"/>
+                        <outlet property="trashField" destination="NEJ-W8-FN1" id="IBC-rD-HQB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="517"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="000.png" width="155" height="125"/>
+        <image name="btn_megabits_pressed" width="62" height="62"/>
+        <image name="btn_megabits_unpressed" width="62" height="62"/>
+        <image name="btn_share_pressed" width="62" height="62"/>
+        <image name="btn_share_unpressed" width="62" height="62"/>
+        <image name="btn_snap_pressed" width="62" height="112"/>
+        <image name="btn_snap_unpressed" width="62" height="112"/>
+        <image name="btn_trash_unpressed" width="62" height="62"/>
+        <image name="hud_frame" width="235" height="563"/>
+    </resources>
+</document>
